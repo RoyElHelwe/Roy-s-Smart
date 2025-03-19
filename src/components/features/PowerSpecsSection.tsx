@@ -75,7 +75,6 @@ export default function PowerSpecsSection() {
     useEffect(() => {
       if (!isVisible) return;
       
-      let start = 0;
       const end = value;
       const duration = 1500;
       const startTime = Date.now();
@@ -109,7 +108,7 @@ export default function PowerSpecsSection() {
             Unmatched Power Capacity
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Never run out of power again with Roy's Smart industry-leading battery and inverter system.
+            Never run out of power again with Roy&apos;s Smart industry-leading battery and inverter system.
           </p>
         </motion.div>
         
@@ -369,7 +368,7 @@ export default function PowerSpecsSection() {
                 className="max-w-4xl mx-auto"
               >
                 <div className="bg-black/30 backdrop-blur-md rounded-2xl p-8 border border-blue-500/20">
-                  <h3 className="text-2xl font-bold text-white mb-6 text-center">How Roy's Smart Compares</h3>
+                  <h3 className="text-2xl font-bold text-white mb-6 text-center">How Roy&apos;s Smart Compares</h3>
                   
                   {/* Comparison Chart */}
                   <div className="overflow-x-auto">
@@ -452,7 +451,7 @@ export default function PowerSpecsSection() {
                   
                   {/* Key Advantages */}
                   <div className="mt-8">
-                    <h4 className="text-lg font-semibold text-white mb-4">Why Roy's Smart Outperforms Competitors:</h4>
+                    <h4 className="text-lg font-semibold text-white mb-4">Why Roy&apos;s Smart Outperforms Competitors:</h4>
                     
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {[

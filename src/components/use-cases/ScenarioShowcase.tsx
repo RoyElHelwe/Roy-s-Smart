@@ -133,7 +133,7 @@ export default function ScenarioShowcase() {
             Real-World Scenarios
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            See how Roy's Smart transforms challenging situations into
+            See how Roy&apos;s Smart transforms challenging situations into
             productive work environments.
           </p>
         </motion.div>
@@ -233,7 +233,7 @@ export default function ScenarioShowcase() {
                       <div className="mr-2 p-1 rounded-full bg-green-500/20">
                         <Check className="h-5 w-5 text-green-500" />
                       </div>
-                      Roy's Smart Solution
+                      Roy&apos;s Smart Solution
                     </h4>
 
                     <ul className="space-y-2">
@@ -348,7 +348,7 @@ export default function ScenarioShowcase() {
           className="text-center mt-16"
         >
           <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-            Transform any environment into your workstation with Roy's Smart.
+            Transform any environment into your workstation with Roy&apos;s Smart.
             Designed for versatility across a wide range of scenarios.
           </p>
           <a

@@ -2,8 +2,8 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
-import { CornerRightDown, Move, Minimize2, Scale, Ruler, Weight, PenTool, Activity } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { CornerRightDown, Move, Minimize2, Ruler, Weight, PenTool, Activity } from "lucide-react";
 
 interface DesignFeature {
   title: string;
@@ -375,7 +375,7 @@ export default function DesignSection() {
           transition={{ delay: 1 }}
         >
           <p className="text-gray-300 mb-4 max-w-2xl mx-auto">
-            Experience the perfect blend of form and function with Roy's Smart workstation. Designed to go anywhere, built to last.
+            Experience the perfect blend of form and function with Roy&apos;s Smart workstation. Designed to go anywhere, built to last.
           </p>
           <a
             href="#"

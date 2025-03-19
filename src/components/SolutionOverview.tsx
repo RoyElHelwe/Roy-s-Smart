@@ -32,7 +32,6 @@ const FeatureCard = ({ title, description, icon, gradient, delay }: FeatureCardP
       <div className="absolute inset-0 w-full h-full opacity-40">
         <SparklesCore
           id={`sparkles-${title.replace(/\s/g, '')}`}
-          background="transparent"
           minSize={0.4}
           maxSize={1}
           particleDensity={10}
@@ -152,7 +151,7 @@ export default function SolutionOverview() {
             className="text-4xl md:text-5xl font-bold text-white mb-6"
           >
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500">
-              Roy's Smart
+              Roy&apos;s Smart
             </span> Workstation
           </motion.h2>
           
@@ -210,7 +209,7 @@ export default function SolutionOverview() {
             Ready to never worry about power or connectivity issues again?
           </p>
           <button className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-medium rounded-full px-8 py-4 transition-all duration-300 shadow-lg shadow-indigo-500/20">
-            Pre-order Roy's Smart Today
+            Pre-order Roy&apos;s Smart Today
           </button>
         </motion.div>
       </div>

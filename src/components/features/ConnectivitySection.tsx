@@ -124,7 +124,7 @@ export default function ConnectivitySection() {
             Connectivity Everywhere
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Never lose your internet connection with Roy's Smart built-in high-gain 4G/5G modem.
+            Never lose your internet connection with Roy&apos;s Smart built-in high-gain 4G/5G modem.
           </p>
         </motion.div>
         
@@ -434,7 +434,7 @@ export default function ConnectivitySection() {
           <div className="mt-6 text-center">
             <p className="text-gray-400 text-sm">
               * Actual speeds may vary based on network congestion, distance from tower, and physical obstructions.
-              Roy's Smart optimizes for the best available connection in any environment.
+              Roy&apos;s Smart optimizes for the best available connection in any environment.
             </p>
           </div>
         </motion.div>

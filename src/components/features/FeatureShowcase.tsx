@@ -96,7 +96,7 @@ export default function FeatureShowcase() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-white">Interactive Product Overview</h2>
-          <p className="text-gray-300 mt-2">Click on the highlighted points to explore Roy's Smart features</p>
+          <p className="text-gray-300 mt-2">Click on the highlighted points to explore Roy&apos;s Smart features</p>
         </div>
         
         <div 
@@ -108,7 +108,7 @@ export default function FeatureShowcase() {
             {/* Placeholder for product visualization - replace with real product image or model */}
             <div className="w-[70%] h-[60%] bg-gradient-to-r from-indigo-800/20 via-purple-700/20 to-indigo-600/20 rounded-lg">
               <div className="w-full h-full backdrop-blur-sm flex items-center justify-center">
-                <p className="text-white/50 text-lg font-medium">Roy's Smart Workstation</p>
+                <p className="text-white/50 text-lg font-medium">Roy&apos;s Smart Workstation</p>
               </div>
             </div>
           </div>

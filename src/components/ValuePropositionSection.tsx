@@ -3,7 +3,6 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 interface CardProps {
@@ -233,7 +232,7 @@ export default function ValuePropositionSection() {
             Ready to experience the future of remote work?
           </p>
           <Link href="#" className="inline-block bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-medium rounded-full px-8 py-4 transition-all duration-300 shadow-lg shadow-indigo-500/20">
-            Learn More About Roy's Smart
+            Learn More About Roy&apos;s Smart
           </Link>
         </motion.div>
       </div>

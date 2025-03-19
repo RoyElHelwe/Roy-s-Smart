@@ -182,7 +182,7 @@ export default function CustomerSegmentSection() {
           style={{ opacity, y: translateY }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Who Will Benefit from Roy's Smart?
+            Who Will Benefit from Roy&apos;s Smart?
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Our versatile workstation is designed to meet the needs of various professionals who require power and connectivity on the go.

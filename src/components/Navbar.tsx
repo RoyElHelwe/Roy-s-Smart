@@ -97,7 +97,7 @@ export default function Navbar() {
             <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600">
               <Wifi className="h-5 w-5 text-white" />
             </div>
-            <span className="text-xl font-bold text-white">Roy's Smart</span>
+            <span className="text-xl font-bold text-white">Roy&apos;s Smart</span>
           </Link>
 
           {/* Desktop Navigation */}

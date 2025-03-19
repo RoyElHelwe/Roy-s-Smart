@@ -14,8 +14,8 @@ export default function UseCasesPage() {
             Ideal Use Cases
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Discover how Roy's Smart workstation adapts to your specific needs, 
-            whether you're a freelancer, field engineer, or outdoor professional.
+            Discover how Roy&apos;s Smart workstation adapts to your specific needs, 
+            whether you&apos;re a freelancer, field engineer, or outdoor professional.
           </p>
         </div>
         

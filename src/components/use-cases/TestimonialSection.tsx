@@ -185,7 +185,7 @@ export default function TestimonialSection() {
             What Our Users Say
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Hear from professionals who have transformed their work experience with Roy's Smart.
+            Hear from professionals who have transformed their work experience with Roy&apos;s Smart.
           </p>
         </motion.div>
         
@@ -246,7 +246,7 @@ export default function TestimonialSection() {
                         transition={{ delay: 0.2 }}
                         className="text-lg text-gray-300 italic mb-6"
                       >
-                        "{currentTestimonial.quote}"
+                        &quot;{currentTestimonial.quote}&quot;
                       </motion.blockquote>
                       
                       {/* Rating */}

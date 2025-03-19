@@ -3,7 +3,7 @@
 
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Check, X, AlertTriangle, HelpCircle } from "lucide-react";
+import { Check, X, HelpCircle } from "lucide-react";
 
 interface CompetitorData {
   name: string;
@@ -231,7 +231,7 @@ export default function ComparisonTable() {
             How We Compare to Competitors
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            See why Roy's Smart is the ultimate choice when compared to other
+            See why Roy&apos;s Smart is the ultimate choice when compared to other
             solutions on the market.
           </p>
         </motion.div>
@@ -761,7 +761,7 @@ export default function ComparisonTable() {
             href="#"
             className="inline-block bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 px-8 py-3 rounded-full text-white font-medium transition-all duration-300"
           >
-            See the Roy's Smart advantage
+            See the Roy&apos;s Smart advantage
           </a>
         </motion.div>
       </div>

@@ -233,7 +233,7 @@ export default function UseCaseCalculator() {
             Find Your Ideal Setup
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Answer a few questions about your needs, and we'll recommend the perfect Roy's Smart configuration for you.
+            Answer a few questions about your needs, and we&apos;ll recommend the perfect Roy&apos;s Smart configuration for you.
           </p>
         </motion.div>
         
@@ -247,7 +247,7 @@ export default function UseCaseCalculator() {
                   1. Which devices do you need to power?
                 </h3>
                 <p className="text-gray-400 mb-4">
-                  Select all the devices you'll need to use with your Roy's Smart workstation.
+                  Select all the devices you&apos;ll need to use with your Roy&apos;s Smart workstation.
                 </p>
                 
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
@@ -420,7 +420,7 @@ export default function UseCaseCalculator() {
                   Your Personalized Recommendation
                 </h3>
                 <p className="text-gray-300">
-                  Based on your needs, here's the ideal Roy's Smart setup for you.
+                  Based on your needs, here&apos;s the ideal Roy&apos;s Smart setup for you.
                 </p>
               </div>
               

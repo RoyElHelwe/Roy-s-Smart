@@ -15,7 +15,7 @@ export default function FeaturesPage() {
             Features & Specifications
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Discover the advanced technology and innovative design that makes Roy's Smart 
+            Discover the advanced technology and innovative design that makes Roy&apos;s Smart 
             the ultimate solution for mobile professionals.
           </p>
         </div>

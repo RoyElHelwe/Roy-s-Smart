@@ -24,7 +24,6 @@ export default function HeroSection() {
         <div className="absolute inset-0 w-full h-full">
           <SparklesCore
             id="tsparticles"
-            background="transparent"
             minSize={0.6}
             maxSize={1.4}
             particleDensity={100}
@@ -55,7 +54,7 @@ export default function HeroSection() {
             className="text-5xl md:text-7xl font-bold text-white mb-6"
           >
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600">
-              Roy's Smart
+              Roy&apos;s Smart
             </span>
           </motion.h1>
 

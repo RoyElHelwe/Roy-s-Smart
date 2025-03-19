@@ -5,7 +5,6 @@ import React, { useRef, useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 interface SparklesCoreProps extends React.HTMLAttributes<HTMLDivElement> {
-  background?: string;
   minSize?: number;
   maxSize?: number;
   particleDensity?: number;
@@ -18,7 +17,6 @@ interface SparklesCoreProps extends React.HTMLAttributes<HTMLDivElement> {
 const SparklesCore = ({
   id,
   className,
-  background = "#000",
   minSize = 0.4,
   maxSize = 1,
   particleColor = "#FFF",
@@ -27,14 +25,12 @@ const SparklesCore = ({
   ...props
 }: SparklesCoreProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [loaded, setLoaded] = useState(false);
 
   // This effect initializes the sparkles canvas animation
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    setLoaded(true);
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 

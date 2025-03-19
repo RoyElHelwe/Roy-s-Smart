@@ -8,7 +8,7 @@ import {
   useTransform,
   AnimatePresence,
 } from "framer-motion";
-import { MessageSquare, Battery, Wifi, Phone, CloudRain } from "lucide-react";
+import { MessageSquare, Battery, Wifi, Phone } from "lucide-react";
 
 export default function ProblemSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -186,7 +186,7 @@ export default function ProblemSection() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-xl text-gray-300 mb-16 max-w-3xl mx-auto"
           >
-            You're on a weekend getaway in the mountains, enjoying the fresh
+            You&apos;re on a weekend getaway in the mountains, enjoying the fresh
             air, finally taking a break from work. The view is breathtaking, and
             you feel completely at peace.
           </motion.p>

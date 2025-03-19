@@ -81,11 +81,11 @@ export default function CTASection() {
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
                   First
                 </span>{" "}
-                to Experience Roy's Smart
+                to Experience Roy&apos;s Smart
               </h2>
               
               <p className="text-xl text-gray-300 mb-8">
-                Pre-order now and never worry about power or connectivity issues again. Join the future of remote work with Roy's Smart Workstation.
+                Pre-order now and never worry about power or connectivity issues again. Join the future of remote work with Roy&apos;s Smart Workstation.
               </p>
               
               {/* Social Proof Counter */}
@@ -140,7 +140,7 @@ export default function CTASection() {
               </h3>
               
               <p className="text-gray-300 mb-6">
-                Sign up to receive exclusive updates, early-bird discounts, and be the first to know when Roy's Smart is available.
+                Sign up to receive exclusive updates, early-bird discounts, and be the first to know when Roy&apos;s Smart is available.
               </p>
               
               {isSubmitted ? (
@@ -149,7 +149,7 @@ export default function CTASection() {
                     <div className="bg-green-500 rounded-full p-1 mr-3">
                       <Check className="h-4 w-4 text-black" />
                     </div>
-                    <span>Thanks for signing up! We'll keep you updated.</span>
+                    <span>Thanks for signing up! We&apos;ll keep you updated.</span>
                   </div>
                 </div>
               ) : (
