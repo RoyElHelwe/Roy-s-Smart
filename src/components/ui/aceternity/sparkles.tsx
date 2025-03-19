@@ -10,9 +10,8 @@ interface SparklesCoreProps extends React.HTMLAttributes<HTMLDivElement> {
   particleDensity?: number;
   particleColor?: string;
   className?: string;
-  particleOptions?: any;
   id?: string;
-} 
+}
 
 const SparklesCore = ({
   id,
@@ -21,7 +20,6 @@ const SparklesCore = ({
   maxSize = 1,
   particleColor = "#FFF",
   particleDensity = 100,
-  particleOptions = {},
   ...props
 }: SparklesCoreProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -100,7 +98,7 @@ const SparklesCore = ({
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [maxSize, minSize, particleColor, particleDensity, particleOptions]);
+  }, [maxSize, minSize, particleColor, particleDensity]);
 
   // Helper function to convert hex color to rgb
   function hexToRgb(hex: string) {
