@@ -16,9 +16,9 @@ export default function HeroSection() {
     <div className="relative w-full min-h-screen bg-black/90 overflow-hidden">
       {/* Background Effects */}
       <BackgroundBeams />
-      
+
       <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-black/10 via-black/50 to-black/80 z-10" />
-      
+
       <div className="relative z-20 flex flex-col items-center justify-center min-h-screen px-4 py-24 mx-auto text-center">
         {/* Sparkles Effect */}
         <div className="absolute inset-0 w-full h-full">
@@ -32,7 +32,7 @@ export default function HeroSection() {
             particleColor="#FFFFFF"
           />
         </div>
-        
+
         {/* Main Content */}
         <div className="relative z-30 max-w-5xl">
           {/* Pre-headline */}
@@ -46,7 +46,7 @@ export default function HeroSection() {
               Introducing the Future of Mobile Workspaces
             </span>
           </motion.div>
-          
+
           {/* Main Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -58,7 +58,7 @@ export default function HeroSection() {
               Roy's Smart
             </span>
           </motion.h1>
-          
+
           {/* Subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -66,7 +66,8 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto"
           >
-            The Ultimate Portable & Foldable Workstation that ensures you never lose power or connectivity—wherever you are.
+            The Ultimate Portable & Foldable Workstation that ensures you never
+            lose power or connectivity—wherever you are.
           </motion.p>
 
           {/* Feature Icons */}
@@ -89,7 +90,7 @@ export default function HeroSection() {
               <span className="text-gray-200">Ergonomic Design</span>
             </div>
           </motion.div>
-          
+
           {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -121,7 +122,7 @@ export default function HeroSection() {
               </Button>
             </Link>
           </motion.div>
-          
+
           {/* Virtual Model Placeholder */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -131,11 +132,28 @@ export default function HeroSection() {
           >
             <div className="w-full h-[300px] md:h-[400px] bg-gradient-to-b from-indigo-900/20 to-purple-900/20 rounded-xl backdrop-blur-sm border border-indigo-500/20 flex items-center justify-center overflow-hidden">
               <div className="absolute inset-0 bg-grid-white/[0.02] bg-grid-white/5" />
-              <p className="text-white/80 font-medium">Interactive 3D Model Coming Soon</p>
-              
+              <p className="text-white/80 font-medium">
+                Interactive 3D Model Coming Soon
+              </p>
+
               {/* Position for the 3D model of Roy's Smart */}
               <div className="absolute inset-0 flex items-center justify-center">
                 {/* We'll implement the 3D model in the next iteration */}
+              </div>
+
+              {/* Feature Callouts */}
+              <div className="hidden md:block">
+                <div className="absolute top-4 left-6 bg-black/60 backdrop-blur-md rounded-lg p-3 border border-white/10 text-sm text-white/80 shadow-xl">
+                  <div className="font-medium">100,000 mAh Battery</div>
+                  <div className="text-xs text-white/60">Power for hours</div>
+                </div>
+
+                <div className="absolute bottom-4 right-6 bg-black/60 backdrop-blur-md rounded-lg p-3 border border-white/10 text-sm text-white/80 shadow-xl">
+                  <div className="font-medium">Foldable Design</div>
+                  <div className="text-xs text-white/60">
+                    Compact & portable
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
