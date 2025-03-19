@@ -185,7 +185,7 @@ export default function ValuePropositionSection() {
             viewport={{ once: true }}
             className="inline-block px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-sm font-medium mb-4"
           >
-            Why Choose Roy's Smart
+            Why Choose Roy&apos;s Smart
           </motion.div>
           
           <motion.h2
