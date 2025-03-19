@@ -12,7 +12,7 @@ interface SparklesCoreProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
   particleOptions?: any;
   id?: string;
-}
+} 
 
 const SparklesCore = ({
   id,
