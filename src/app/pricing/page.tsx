@@ -2,8 +2,9 @@
 import PricingCard from "@/components/pricing/PricingCard";
 import ROICalculator from "@/components/pricing/ROICalculator";
 import ComponentBreakdown from "@/components/pricing/ComponentBreakdown";
-import ComparisonPricing from "@/components/pricing/ComparisonPricing";
-import FinancingOptions from "@/components/pricing/FinancingOptions";
+import FinancialTables from "@/components/pricing/FinancialTables";
+import BreakEvenSimulator from "@/components/pricing/BreakEvenSimulator";
+import ProfitabilityTimeline from "@/components/pricing/ProfitabilityTimeline";
 
 export default function PricingPage() {
   return (
@@ -15,34 +16,40 @@ export default function PricingPage() {
             Pricing & Value
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Invest in productivity without limits. Roy's Smart offers exceptional 
-            value with transparent pricing and flexible payment options.
+            Invest in productivity without limits. Roy's Smart offers
+            exceptional value with transparent pricing and flexible payment
+            options.
           </p>
         </div>
-        
+
         {/* Main Pricing Card */}
         <div id="pricing">
           <PricingCard />
         </div>
-        
+
         {/* ROI Calculator */}
         <div id="roi">
           <ROICalculator />
         </div>
-        
+
         {/* Component Breakdown */}
         <div id="components">
           <ComponentBreakdown />
         </div>
-        
-        {/* Comparison Pricing */}
-        <div id="comparison">
-          <ComparisonPricing />
+
+        {/* Financial Tables */}
+        <div id="financials">
+          <FinancialTables />
         </div>
-        
-        {/* Financing Options */}
-        <div id="financing">
-          <FinancingOptions />
+
+        {/* Interactive Break-Even Simulator (NEW) */}
+        <div id="simulator">
+          <BreakEvenSimulator />
+        </div>
+
+        {/* Profitability Timeline (NEW) */}
+        <div id="timeline">
+          <ProfitabilityTimeline />
         </div>
       </div>
     </main>
