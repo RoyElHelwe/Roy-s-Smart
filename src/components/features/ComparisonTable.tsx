@@ -223,9 +223,9 @@ export default function ComparisonTable() {
         {/* Section Header */}
         <motion.div
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
-          transition={{ duration: 0.7 }}
+          // initial={{ opacity: 0, y: 20 }}
+          // animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+          // transition={{ duration: 0.7 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             How We Compare to Competitors
@@ -272,9 +272,9 @@ export default function ComparisonTable() {
         <div className="relative overflow-x-auto rounded-xl border border-indigo-500/20">
           <motion.table
             className="w-full text-sm text-gray-300 border-collapse"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: isVisible ? 1 : 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            // initial={{ opacity: 0 }}
+            // animate={{ opacity: isVisible ? 1 : 0 }}
+            // transition={{ duration: 0.7, delay: 0.2 }}
           >
             <thead className="text-white bg-indigo-900/50 uppercase">
               <tr>
@@ -700,9 +700,9 @@ export default function ComparisonTable() {
 
         {/* Key Takeaways */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
-          transition={{ delay: 0.7, duration: 0.5 }}
+          // initial={{ opacity: 0, y: 30 }}
+          // animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
+          // transition={{ delay: 0.7, duration: 0.5 }}
           className="mt-16 max-w-4xl mx-auto"
         >
           <h3 className="text-xl font-bold text-white mb-6 text-center">
@@ -736,9 +736,9 @@ export default function ComparisonTable() {
               <motion.div
                 key={index}
                 className={`rounded-xl p-6 border ${takeaway.color}`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
-                transition={{ delay: 0.8 + index * 0.1 }}
+                // initial={{ opacity: 0, y: 20 }}
+                // animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+                // transition={{ delay: 0.8 + index * 0.1 }}
                 whileHover={{ scale: 1.02 }}
               >
                 <h4 className="text-lg font-semibold text-white mb-2">
@@ -752,9 +752,9 @@ export default function ComparisonTable() {
 
         {/* Bottom CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
-          transition={{ delay: 1, duration: 0.5 }}
+          // initial={{ opacity: 0, y: 30 }}
+          // animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
+          // transition={{ delay: 1, duration: 0.5 }}
           className="text-center mt-12"
         >
           <a

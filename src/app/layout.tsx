@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import type { Metadata } from "next";
 import Footer from "@/components/layout/Footer";
-import FloatingPreOrderButton from "@/components/layout/FloatingPreOrderButton";
+import Navbar from "@/components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,14 +24,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.className} min-h-screen`}>
+        <Navbar />
         {/* Main content */}
         {children}
 
         {/* Footer */}
         <Footer />
 
-        {/* Floating Pre-Order Button */}
-        <FloatingPreOrderButton />
       </body>
     </html>
   );

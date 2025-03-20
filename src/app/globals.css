@@ -189,3 +189,16 @@ a[href^="https://"]:hover {
 .group * {
   pointer-events: auto;
 }
+
+.beam-pulse {
+  animation: beamPulse 5s infinite;
+}
+
+.pulse-effect-1 {
+  animation: pulse1 2s infinite;
+}
+
+.pulse-effect-2 {
+  animation: pulse2 2s infinite;
+  animation-delay: 0.5s;
+}
