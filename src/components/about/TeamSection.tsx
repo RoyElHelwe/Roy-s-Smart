@@ -12,6 +12,7 @@ import {
   LinkedinIcon,
   GithubIcon,
 } from "lucide-react";
+import Image from "next/image";
 
 interface TeamMember {
   id: string;
@@ -33,18 +34,6 @@ interface Advisor {
   role: string;
   company: string;
   bio: string;
-}
-
-// CardHoverEffect component from Aceternity UI
-function CardHoverEffect({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="group relative h-full perspective-1000">
-      <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-indigo-500 to-purple-600 opacity-0 blur transition-all duration-500 group-hover:opacity-30 group-hover:duration-200"></div>
-      <div className="relative h-full rounded-xl bg-black/60 shadow-xl transition-all duration-200 [transform-style:preserve-3d] group-hover:[transform:rotateY(10deg)_translateZ(10px)] overflow-hidden">
-        {children}
-      </div>
-    </div>
-  );
 }
 
 export default function TeamSection() {
@@ -165,12 +154,25 @@ export default function TeamSection() {
             animate={isVisible ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <CardHoverEffect>
+            {/* Simple card with hover border effect - no 3D transform */}
+            <div className="relative h-full rounded-xl hover:shadow-xl transition-all duration-200 border border-transparent hover:border-indigo-500/30 bg-black/60 overflow-hidden">
+              {/* Card content */}
               <div className="p-6 h-full flex flex-col">
                 <div className="flex flex-col md:flex-row items-start gap-6">
                   {/* Profile image placeholder */}
-                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white text-2xl font-bold">
-                    RE
+                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white text-2xl font-bold relative overflow-hidden">
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      RH
+                    </div>
+                    <div className="absolute inset-0">
+                      <Image
+                        src={teamMembers[0].image}
+                        alt={teamMembers[0].name}
+                        width={96}
+                        height={96}
+                        style={{ objectFit: "cover" }}
+                      />
+                    </div>
                   </div>
 
                   {/* Name and role */}
@@ -182,22 +184,26 @@ export default function TeamSection() {
                       {teamMembers[0].role}
                     </p>
                     <div className="flex gap-3">
-                      <a
-                        href={teamMembers[0].links?.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-400 hover:text-indigo-400 transition-colors"
-                      >
-                        <LinkedinIcon className="h-5 w-5" />
-                      </a>
-                      <a
-                        href={teamMembers[0].links?.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-400 hover:text-indigo-400 transition-colors"
-                      >
-                        <GithubIcon className="h-5 w-5" />
-                      </a>
+                      {teamMembers[0].links?.linkedin && (
+                        <a
+                          href={teamMembers[0].links.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-400 hover:text-indigo-400 transition-colors"
+                        >
+                          <LinkedinIcon className="h-5 w-5" />
+                        </a>
+                      )}
+                      {teamMembers[0].links?.github && (
+                        <a
+                          href={teamMembers[0].links.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-400 hover:text-indigo-400 transition-colors"
+                        >
+                          <GithubIcon className="h-5 w-5" />
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -248,7 +254,7 @@ export default function TeamSection() {
                   </p>
                 </div>
               </div>
-            </CardHoverEffect>
+            </div>
           </motion.div>
 
           {/* Skills and education */}

@@ -1,28 +1,37 @@
 // app/layout.tsx
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+import type { Metadata } from "next";
+import Footer from "@/components/layout/Footer";
+import FloatingPreOrderButton from "@/components/layout/FloatingPreOrderButton";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Roy's Smart - The Ultimate Portable & Foldable Workstation",
-  description: "A portable, foldable workstation that ensures you never lose power or internet—wherever you are.",
+  title: {
+    template: "%s | Roy's Smart",
+    default: "Roy's Smart - The Ultimate Portable Workstation",
+  },
+  description:
+    "Portable & Foldable Workstation with power and connectivity for professionals on the move.",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} bg-black text-white`}>
-        <Navbar />
-        <main className="pt-16">
-          {children}
-        </main>
+    <html lang="en" className="scroll-smooth">
+      <body className={`${inter.className} min-h-screen`}>
+        {/* Main content */}
+        {children}
+
+        {/* Footer */}
+        <Footer />
+
+        {/* Floating Pre-Order Button */}
+        <FloatingPreOrderButton />
       </body>
     </html>
   );
