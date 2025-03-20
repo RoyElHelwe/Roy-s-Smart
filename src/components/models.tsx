@@ -106,7 +106,6 @@ export function Workstation({
     : ([scale, scale, scale] as [number, number, number]);
 
   // Keep track of original material
-  const originalMaterial = materials.material_0 || nodes.mesh_0.material;
 
   // Extract material properties for type safety
   const materialProps = {
