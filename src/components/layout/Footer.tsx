@@ -3,7 +3,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { Linkedin, Github, Instagram, Mail, ArrowRight, CheckCircle } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -110,7 +109,7 @@ export default function Footer() {
                 <div className="h-10 w-10 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
                   <span className="text-white font-bold text-lg">R</span>
                 </div>
-                <span className="text-white text-xl font-bold">Roy's Smart</span>
+                <span className="text-white text-xl font-bold">Roy&apos;s Smart</span>
               </div>
             </Link>
             <p className="text-gray-400 mb-6">
@@ -178,7 +177,7 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold mb-6">Subscribe to Our Newsletter</h3>
             <p className="text-gray-400 mb-4">
-              Get the latest updates and news about Roy's Smart.
+              Get the latest updates and news about Roy&apos;s Smart.
             </p>
             <form onSubmit={handleSubscribe}>
               <div className="space-y-3">
@@ -234,7 +233,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="border-t border-gray-800 pt-8 text-center">
           <p className="text-gray-500 text-sm">
-            &copy; {currentYear} Roy's Smart. All rights reserved.
+            &copy; {currentYear} Roy&apos;s Smart. All rights reserved.
           </p>
         </div>
       </div>

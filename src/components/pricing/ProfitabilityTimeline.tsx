@@ -199,7 +199,6 @@ export default function ProfitabilityTimeline() {
               // Determine if this phase is active, completed, or upcoming
               const isActive = phase.id === selectedPhase;
               const isCompleted = phase.status === "past";
-              const isUpcoming = phase.status === "future";
               
               return (
                 <motion.button

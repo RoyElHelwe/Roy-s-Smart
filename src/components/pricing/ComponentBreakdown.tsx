@@ -293,7 +293,7 @@ export default function ComponentBreakdown() {
             Component Breakdown
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            See the premium components that make Roy's Smart worth every penny.
+            See the premium components that make Roy&apos;s Smart worth every penny.
           </p>
         </motion.div>
 
@@ -431,7 +431,7 @@ export default function ComponentBreakdown() {
             Quality Without Compromise
           </h3>
           <p className="text-gray-300">
-            At Roy's Smart, we believe in using only the highest-quality
+            At Roy&apos;s Smart, we believe in using only the highest-quality
             components to ensure reliability, durability, and performance. We
             source premium materials and components directly from reputable
             manufacturers to maintain strict quality control while providing

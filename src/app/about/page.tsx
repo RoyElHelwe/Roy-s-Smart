@@ -1,6 +1,5 @@
 // app/about/page.tsx
 import { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import BiographySection from "@/components/about/BiographySection";
 import SkillsShowcase from "@/components/about/SkillsShowcase";
@@ -22,7 +21,7 @@ export default function AboutPage() {
         {/* Page Header */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500 mb-6">
-            About Roy's Smart
+            About Roy&apos;s Smart
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Meet the innovator, technology, and vision behind the ultimate
@@ -37,10 +36,10 @@ export default function AboutPage() {
               <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-purple-600 opacity-20 blur-xl rounded-2xl"></div>
               <div className="relative">
                 <h2 className="text-3xl font-bold text-white mb-4">
-                  The Roy's Smart Story
+                  The Roy&apos;s Smart Story
                 </h2>
                 <p className="text-gray-300 mb-4">
-                  Roy's Smart was founded by Raed El Helwe, a software engineer
+                  Roy&apos;s Smart was founded by Raed El Helwe, a software engineer
                   with expertise in web development, AI integration, and a
                   passion for solving real-world problems.
                 </p>
@@ -53,7 +52,7 @@ export default function AboutPage() {
                 </p>
                 <p className="text-gray-300 mb-6">
                   By combining software expertise with hardware innovation,
-                  Roy's Smart delivers a seamless solution that empowers users
+                  Roy&apos;s Smart delivers a seamless solution that empowers users
                   to work from anywhere without limitations.
                 </p>
                 <Button
@@ -88,7 +87,7 @@ export default function AboutPage() {
                     </svg>
                   </div>
                   <h3 className="text-xl font-bold text-white">
-                    Roy's Smart Workstation
+                    Roy&apos;s Smart Workstation
                   </h3>
                   <p className="text-gray-300 mt-2">
                     The Ultimate Portable Solution

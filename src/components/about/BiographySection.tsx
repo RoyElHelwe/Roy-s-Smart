@@ -219,24 +219,24 @@ export default function BiographySection() {
           transition={{ duration: 0.6, delay: 0.8 }}
         >
           <h3 className="text-2xl font-bold text-white mb-4">
-            Why I Created Roy's Smart
+            Why I Created Roy&apos;s Smart
           </h3>
           <div className="text-gray-300 space-y-4">
             <p>
               As a software engineer specializing in modern web technologies,
-              I've worked with clients across different industries and
+              I&apos;ve worked with clients across different industries and
               recognized a common challenge: the limitations of working remotely
               due to power and connectivity issues.
             </p>
             <p>
               My experience building complex web applications and integrating AI
-              technologies has shown me that software alone isn't enough –
+              technologies has shown me that software alone isn&apos;t enough –
               professionals need reliable hardware infrastructure to support
               their digital work, especially when away from traditional office
               spaces.
             </p>
             <p>
-              Roy's Smart represents the merging of my software expertise with
+              Roy&apos;s Smart represents the merging of my software expertise with
               hardware innovation, creating a solution that addresses the
               real-world needs of remote workers, digital nomads, and field
               professionals who need reliable power and connectivity wherever

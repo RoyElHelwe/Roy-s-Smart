@@ -291,7 +291,7 @@ export default function ComparisonPricing() {
             Compare With Alternatives
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            See how Roy's Smart compares to DIY solutions and separate components.
+            See how Roy&apos;s Smart compares to DIY solutions and separate components.
           </p>
         </motion.div>
         
@@ -546,13 +546,13 @@ export default function ComparisonPricing() {
             <thead>
               <tr className="border-b border-gray-800">
                 <th className="py-3 text-left text-gray-400 font-medium">Feature</th>
-                <th className="py-3 text-center text-gray-400 font-medium">Roy's Smart</th>
+                <th className="py-3 text-center text-gray-400 font-medium">Roy&apos;s Smart</th>
                 <th className="py-3 text-center text-gray-400 font-medium">DIY Solution</th>
                 <th className="py-3 text-center text-gray-400 font-medium">Separate Products</th>
               </tr>
             </thead>
             <tbody>
-              {features.map((feature, index) => (
+              {features.map((feature) => (
                 <tr key={feature.id} className="border-b border-gray-800 hover:bg-white/5">
                   <td className="py-3 flex items-center">
                     <div className="p-1 rounded bg-indigo-500/10 mr-2">
@@ -605,7 +605,7 @@ export default function ComparisonPricing() {
           <h3 className="text-2xl font-bold text-white mb-4">Our Recommendation</h3>
           <p className="text-gray-300 max-w-3xl mx-auto mb-8">
             While DIY solutions can sometimes cost less (depending on quality and your time value), 
-            Roy's Smart offers the best balance of quality, convenience, and integrated design.
+            Roy&apos;s Smart offers the best balance of quality, convenience, and integrated design.
             Our all-in-one solution eliminates the complexity and time investment of DIY approaches,
             while offering professional-grade components at a price lower than buying separate products.
           </p>

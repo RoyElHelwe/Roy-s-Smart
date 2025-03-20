@@ -114,7 +114,7 @@ export default function PricingCard() {
                   Premium Value
                 </div>
                 <h2 className="text-2xl font-bold text-white mb-2">
-                  Roy's Smart Workstation
+                  Roy&apos;s Smart Workstation
                 </h2>
                 <p className="text-gray-400">
                   Everything you need to work from anywhere

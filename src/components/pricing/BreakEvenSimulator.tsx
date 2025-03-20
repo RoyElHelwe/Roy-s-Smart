@@ -5,7 +5,7 @@ import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
-import { TrendingUp, ArrowRight, BarChart3, Calculator } from "lucide-react";
+import { TrendingUp, BarChart3, Calculator } from "lucide-react";
 import { 
   LineChart, 
   Line, 

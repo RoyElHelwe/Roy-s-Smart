@@ -16,7 +16,7 @@ export default function PricingPage() {
             Pricing & Value
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Invest in productivity without limits. Roy's Smart offers
+            Invest in productivity without limits. Roy&apos;s Smart offers
             exceptional value with transparent pricing and flexible payment
             options.
           </p>

@@ -28,14 +28,6 @@ interface TeamMember {
   };
 }
 
-interface Advisor {
-  id: string;
-  name: string;
-  role: string;
-  company: string;
-  bio: string;
-}
-
 export default function TeamSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -141,7 +133,7 @@ export default function TeamSection() {
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            The expertise and passion behind Roy's Smart
+            The expertise and passion behind Roy&apos;s Smart
           </p>
         </motion.div>
 
@@ -213,7 +205,7 @@ export default function TeamSection() {
                   <p className="mb-4">
                     As a software engineer with a strong foundation in web
                     development, I bring technical expertise and creative
-                    problem-solving to Roy's Smart. My experience spans:
+                    problem-solving to Roy&apos;s Smart. My experience spans:
                   </p>
                   <ul className="space-y-2 mb-4">
                     <li className="flex items-start">
@@ -233,7 +225,7 @@ export default function TeamSection() {
                     <li className="flex items-start">
                       <span className="text-indigo-400 mr-2">•</span>
                       <span>
-                        Experience with AI technologies including OpenAI's APIs
+                        Experience with AI technologies including OpenAI&apos;s APIs
                         and integration patterns
                       </span>
                     </li>
@@ -246,8 +238,8 @@ export default function TeamSection() {
                     </li>
                   </ul>
                   <p>
-                    I'm passionate about combining hardware and software to
-                    create seamless experiences that solve real problems. Roy's
+                    I&apos;m passionate about combining hardware and software to
+                    create seamless experiences that solve real problems. Roy&apos;s
                     Smart represents the culmination of this vision—a solution
                     born from understanding the challenges faced by remote
                     workers and digital nomads.
@@ -383,9 +375,9 @@ export default function TeamSection() {
             Growing Our Team
           </h3>
           <p className="text-center text-gray-300 max-w-3xl mx-auto mb-10">
-            As Roy's Smart expands, we're looking to bring on talented
+            As Roy&apos;s Smart expands, we&apos;re looking to bring on talented
             individuals who share our passion for innovation and
-            problem-solving. Here are some of the roles we're looking to fill in
+            problem-solving. Here are some of the roles we&apos;re looking to fill in
             the future:
           </p>
 
@@ -423,10 +415,10 @@ export default function TeamSection() {
                 Interested in Joining Our Team?
               </h3>
               <p className="text-gray-300 mb-4">
-                We're always looking for passionate individuals who want to help
+                We&apos;re always looking for passionate individuals who want to help
                 shape the future of remote work technology. If you believe in
                 our mission and have skills that could contribute to our vision,
-                we'd love to hear from you.
+                we&apos;d love to hear from you.
               </p>
               <a
                 href="#contact"

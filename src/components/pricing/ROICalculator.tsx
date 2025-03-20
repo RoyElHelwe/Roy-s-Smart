@@ -125,7 +125,7 @@ export default function ROICalculator() {
             Calculate Your Return on Investment
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            See how quickly Roy's Smart pays for itself by preventing lost productivity and unnecessary expenses.
+            See how quickly Roy&apos;s Smart pays for itself by preventing lost productivity and unnecessary expenses.
           </p>
         </motion.div>
         
@@ -274,7 +274,7 @@ export default function ROICalculator() {
               <div className="text-center text-gray-400">
                 <TrendingUp className="h-12 w-12 mx-auto mb-4 text-indigo-500 opacity-50" />
                 <p className="text-lg">
-                  Fill out the form and click "Calculate" to see your potential savings.
+                  Fill out the form and click &quot;Calculate&quot; to see your potential savings.
                 </p>
               </div>
             ) : (
@@ -410,7 +410,7 @@ export default function ROICalculator() {
           transition={{ duration: 0.5, delay: 0.6 }}
         >
           <p>
-            This calculator provides an estimate based on typical usage patterns. Actual savings may vary based on your specific circumstances and usage. The ROI calculation assumes a one-time cost of $850 for Roy's Smart workstation and a 5-year product lifespan with minimal maintenance costs.
+            This calculator provides an estimate based on typical usage patterns. Actual savings may vary based on your specific circumstances and usage. The ROI calculation assumes a one-time cost of $850 for Roy&apos;s Smart workstation and a 5-year product lifespan with minimal maintenance costs.
           </p>
         </motion.div>
       </div>

@@ -3,7 +3,7 @@
 
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Linkedin, Github, Twitter, Instagram, Youtube } from "lucide-react";
+import { Linkedin, Github, Instagram } from "lucide-react";
 
 interface SocialLink {
   name: string;

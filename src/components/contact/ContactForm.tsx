@@ -246,7 +246,7 @@ export default function ContactForm() {
               
               <h2 className="text-2xl font-bold text-white mb-4">Message Sent Successfully!</h2>
               <p className="text-gray-300 mb-8 max-w-md">
-                Thank you for reaching out. We'll review your message and get back to you as soon as possible.
+                Thank you for reaching out. We&apos;ll review your message and get back to you as soon as possible.
               </p>
               
               <Button 

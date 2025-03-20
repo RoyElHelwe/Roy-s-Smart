@@ -255,7 +255,7 @@ export default function SkillsShowcase() {
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            The technologies and skills that power Roy's Smart development
+            The technologies and skills that power Roy&apos;s Smart development
           </p>
         </motion.div>
 
@@ -387,7 +387,7 @@ export default function SkillsShowcase() {
                 AI Integration
               </h4>
               <p className="text-gray-300 text-sm">
-                Building applications that leverage OpenAI's capabilities,
+                Building applications that leverage OpenAI&apos;s capabilities,
                 enabling AI-driven content generation and editing for enhanced
                 user experiences. Creating interfaces between AI tools and user
                 needs.

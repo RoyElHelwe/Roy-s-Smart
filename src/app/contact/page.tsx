@@ -20,7 +20,7 @@ export default function ContactPage() {
             Contact Us
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Have questions about Roy's Smart? We're here to help.
+            Have questions about Roy&apos;s Smart? We&apos;re here to help.
           </p>
         </div>
         

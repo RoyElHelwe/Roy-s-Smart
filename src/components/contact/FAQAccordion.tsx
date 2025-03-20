@@ -3,12 +3,6 @@
 
 import { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { HelpCircle, ChevronDown } from "lucide-react";
 
 interface FAQ {
@@ -207,8 +201,8 @@ export default function FAQAccordion() {
           Frequently Asked Questions
         </h2>
         <p className="text-gray-300 max-w-2xl mx-auto">
-          Find answers to common questions about Roy's Smart. If you don't see
-          what you're looking for, please contact us.
+          Find answers to common questions about Roy&apos;s Smart. If you don&apos;t see
+          what you&apos;re looking for, please contact us.
         </p>
       </motion.div>
 
@@ -370,7 +364,7 @@ export default function FAQAccordion() {
         transition={{ duration: 0.5, delay: 0.6 }}
       >
         <p>
-          Can't find the answer you're looking for?{" "}
+          Can&apos;t find the answer you&apos;re looking for?{" "}
           <motion.a
             href="#contact-form"
             className="text-indigo-400 hover:text-indigo-300 underline inline-block"
