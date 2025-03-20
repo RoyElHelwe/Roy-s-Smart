@@ -205,16 +205,16 @@ export default function ConnectivitySection() {
                     top: location.yPos,
                     transform: 'translate(-50%, -50%)',
                   }}
-                  // whileHover={{ scale: 1.2 }}
+                  whileHover={{ scale: 1.2 }}
                   onClick={() => setActiveLocation(location.id)}
-                  // initial={{ scale: 0 }}
-                  // animate={{ 
-                  //   scale: 1,
-                  //   boxShadow: activeLocation === location.id 
-                  //     ? '0 0 0 4px rgba(255,255,255,0.3), 0 0 20px rgba(255,255,255,0.5)' 
-                  //     : '0 0 0 0px rgba(255,255,255,0)'
-                  // }}
-                  // transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  initial={{ scale: 0 }}
+                  animate={{ 
+                    scale: 1,
+                    boxShadow: activeLocation === location.id 
+                      ? '0 0 0 4px rgba(255,255,255,0.3), 0 0 20px rgba(255,255,255,0.5)' 
+                      : '0 0 0 0px rgba(255,255,255,0)'
+                  }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
                   <SignalHigh className="h-4 w-4 text-white" />
                   
@@ -223,13 +223,13 @@ export default function ConnectivitySection() {
                     <>
                       <motion.span
                         className={`absolute inset-0 rounded-full ${location.color} opacity-75`}
-                        // animate={{ scale: [1, 1.5], opacity: [0.5, 0] }}
-                        // transition={{ repeat: Infinity, duration: 1.5 }}
+                        animate={{ scale: [1, 1.5], opacity: [0.5, 0] }}
+                        transition={{ repeat: Infinity, duration: 1.5 }}
                       />
                       <motion.span
                         className={`absolute inset-0 rounded-full ${location.color} opacity-75`}
-                        // animate={{ scale: [1, 2], opacity: [0.5, 0] }}
-                        // transition={{ repeat: Infinity, duration: 2 }}
+                        animate={{ scale: [1, 2], opacity: [0.5, 0] }}
+                        transition={{ repeat: Infinity, duration: 2 }}
                       />
                     </>
                   )}
@@ -246,11 +246,11 @@ export default function ConnectivitySection() {
                     top: location.yPos,
                     transform: 'translate(-50%, calc(-50% - 20px))',
                   }}
-                  // initial={{ opacity: 0 }}
-                  // animate={{ 
-                  //   opacity: activeLocation === location.id ? 1 : 0.6
-                  // }}
-                  // transition={{ duration: 0.3 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ 
+                    opacity: activeLocation === location.id ? 1 : 0.6
+                  }}
+                  transition={{ duration: 0.3 }}
                 >
                   <div 
                     className={`${activeLocation === location.id ? 'text-white' : 'text-gray-400'} 
@@ -282,10 +282,10 @@ export default function ConnectivitySection() {
               {activeLocation && (
                 <motion.div
                   key={activeLocation}
-                  // initial={{ opacity: 0, y: 20 }}
-                  // animate={{ opacity: 1, y: 0 }}
-                  // exit={{ opacity: 0, y: -20 }}
-                  // transition={{ duration: 0.3 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.3 }}
                 >
                   <div className="flex items-center gap-3 mb-4">
                     <div className={`p-3 rounded-full ${getActiveLocation()?.color}`}>
@@ -334,9 +334,9 @@ export default function ConnectivitySection() {
                         <motion.div
                           key={index}
                           className="flex gap-3 bg-white/5 p-3 rounded-lg"
-                          // initial={{ opacity: 0, x: -20 }}
-                          // animate={{ opacity: 1, x: 0 }}
-                          // transition={{ delay: 0.2 + index * 0.1 }}
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: 0.2 + index * 0.1 }}
                         >
                           <div className="text-blue-400 mt-0.5">
                             {feature.icon}
@@ -357,9 +357,9 @@ export default function ConnectivitySection() {
         
         {/* Speed Comparison Table */}
         <motion.div
-          // initial={{ opacity: 0, y: 30 }}
-          // animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
-          // transition={{ delay: 0.7, duration: 0.5 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
+          transition={{ delay: 0.7, duration: 0.5 }}
           className="mt-16 max-w-4xl mx-auto"
         >
           <h3 className="text-xl font-bold text-white mb-6 text-center">Speed Comparison</h3>
@@ -413,9 +413,9 @@ export default function ConnectivitySection() {
                   <motion.tr
                     key={index}
                     className="border-b border-gray-800 hover:bg-white/5"
-                    // initial={{ opacity: 0, y: 10 }}
-                    // animate={{ opacity: 1, y: 0 }}
-                    // transition={{ delay: 0.1 + index * 0.1 }}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 + index * 0.1 }}
                   >
                     <td className="py-3 px-4 text-white font-medium">
                       <div className={`inline-block w-2 h-2 rounded-full bg-${network.color}-500 mr-2`}></div>
@@ -441,9 +441,9 @@ export default function ConnectivitySection() {
         
         {/* Bottom CTA */}
         <motion.div
-          // initial={{ opacity: 0, y: 30 }}
-          // animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
-          // transition={{ delay: 0.9, duration: 0.5 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
+          transition={{ delay: 0.9, duration: 0.5 }}
           className="text-center mt-12"
         >
           <a
