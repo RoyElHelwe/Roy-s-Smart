@@ -7,10 +7,7 @@ import { ArrowRight, Battery, Wifi, Monitor } from "lucide-react";
 import { motion } from "framer-motion";
 import { Canvas } from "@react-three/fiber";
 import {
-  Environment,
   OrbitControls,
-  PresentationControls,
-  ContactShadows,
   Html,
   useProgress,
   Stage,
