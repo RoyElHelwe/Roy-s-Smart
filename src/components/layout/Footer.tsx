@@ -3,9 +3,17 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Linkedin, Github, Instagram, Mail, ArrowRight, CheckCircle } from "lucide-react";
+import {
+  Linkedin,
+  Github,
+  Instagram,
+  Mail,
+  ArrowRight,
+  CheckCircle,
+} from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 interface SocialLink {
   name: string;
@@ -15,10 +23,20 @@ interface SocialLink {
 }
 
 // GlowingBorderEffect component inspired by Aceternity UI
-const GlowingBorderEffect = ({ children, isActive = false }: { children: React.ReactNode; isActive?: boolean }) => {
+const GlowingBorderEffect = ({
+  children,
+  isActive = false,
+}: {
+  children: React.ReactNode;
+  isActive?: boolean;
+}) => {
   return (
     <div className="relative group">
-      <div className={`absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg blur opacity-30 ${isActive ? 'opacity-100' : 'group-hover:opacity-100'} transition-opacity duration-300`}></div>
+      <div
+        className={`absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg blur opacity-30 ${
+          isActive ? "opacity-100" : "group-hover:opacity-100"
+        } transition-opacity duration-300`}
+      ></div>
       <div className="relative">{children}</div>
     </div>
   );
@@ -29,30 +47,30 @@ export default function Footer() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [isEmailValid, setIsEmailValid] = useState(true);
-  
+
   // Email validation
   const validateEmail = (email: string) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
   };
-  
+
   // Handle newsletter signup
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!validateEmail(email)) {
       setIsEmailValid(false);
       return;
     }
-    
+
     setIsEmailValid(true);
     setIsSubmitting(true);
-    
+
     // Simulate API call
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubscribed(true);
-      
+
       // Reset after 3 seconds
       setTimeout(() => {
         setIsSubscribed(false);
@@ -60,32 +78,32 @@ export default function Footer() {
       }, 3000);
     }, 1500);
   };
-  
+
   // Current year for copyright
   const currentYear = new Date().getFullYear();
-  
+
   // Social links data
   const socialLinks: SocialLink[] = [
     {
       name: "LinkedIn",
       url: "https://linkedin.com/in/raed-el-helwe/",
       icon: <Linkedin />,
-      color: "from-blue-500 to-blue-700"
+      color: "from-blue-500 to-blue-700",
     },
     {
       name: "Instagram",
       url: "https://instagram.com/raed__helwe",
       icon: <Instagram />,
-      color: "from-pink-500 to-purple-600"
+      color: "from-pink-500 to-purple-600",
     },
     {
       name: "GitHub",
       url: "https://github.com/RoyElHelwe",
       icon: <Github />,
-      color: "from-gray-600 to-gray-800"
-    }
+      color: "from-gray-600 to-gray-800",
+    },
   ];
-  
+
   // Quick links
   const quickLinks = [
     { name: "Home", href: "/" },
@@ -99,21 +117,35 @@ export default function Footer() {
     <footer className="bg-black relative">
       {/* Top gradient border */}
       <div className="h-px w-full bg-gradient-to-r from-transparent via-indigo-500 to-transparent"></div>
-      
+
       <div className="max-w-7xl mx-auto px-4 pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand column */}
           <div>
             <Link href="/" className="inline-block mb-6">
               <div className="flex items-center gap-2">
-                <div className="h-10 w-10 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">R</span>
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white text-2xl font-bold relative overflow-hidden">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    RH
+                  </div>
+                  <div className="absolute inset-0">
+                    <Image
+                      src={"/images/team/raed.jpg"}
+                      alt={"Raed El Helwe"}
+                      width={96}
+                      height={96}
+                      style={{ objectFit: "cover" }}
+                    />
+                  </div>
                 </div>
-                <span className="text-white text-xl font-bold">Roy&apos;s Smart</span>
+                <span className="text-white text-xl font-bold">
+                  Roy&apos;s Smart
+                </span>
               </div>
             </Link>
             <p className="text-gray-400 mb-6">
-              The ultimate portable & foldable workstation. Never lose power or connectivity wherever you are.
+              The ultimate portable & foldable workstation. Never lose power or
+              connectivity wherever you are.
             </p>
             <div className="flex gap-4">
               {socialLinks.map((link) => (
@@ -130,7 +162,7 @@ export default function Footer() {
               ))}
             </div>
           </div>
-          
+
           {/* Quick Links column */}
           <div>
             <h3 className="text-white font-bold mb-6">Quick Links</h3>
@@ -148,23 +180,23 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-          
+
           {/* Contact Info column */}
           <div>
             <h3 className="text-white font-bold mb-6">Contact</h3>
             <ul className="space-y-4">
               <li className="text-gray-400">Qalamoun, Lebanon</li>
               <li>
-                <a 
-                  href="mailto:raedhelwe@hotmail.com" 
+                <a
+                  href="mailto:raedhelwe@hotmail.com"
                   className="text-gray-400 hover:text-indigo-400 transition-colors"
                 >
                   raedhelwe@hotmail.com
                 </a>
               </li>
               <li>
-                <a 
-                  href="tel:+96171567290" 
+                <a
+                  href="tel:+96171567290"
                   className="text-gray-400 hover:text-indigo-400 transition-colors"
                 >
                   +961 71 567 290
@@ -172,10 +204,12 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          
+
           {/* Newsletter column */}
           <div>
-            <h3 className="text-white font-bold mb-6">Subscribe to Our Newsletter</h3>
+            <h3 className="text-white font-bold mb-6">
+              Subscribe to Our Newsletter
+            </h3>
             <p className="text-gray-400 mb-4">
               Get the latest updates and news about Roy&apos;s Smart.
             </p>
@@ -195,13 +229,15 @@ export default function Footer() {
                         setIsEmailValid(true);
                       }}
                       className={`pl-10 bg-black/50 border-indigo-500/30 focus:border-indigo-500/70 text-white ${
-                        !isEmailValid ? 'border-red-500' : ''
+                        !isEmailValid ? "border-red-500" : ""
                       }`}
                     />
                   </div>
                 </GlowingBorderEffect>
                 {!isEmailValid && (
-                  <p className="text-red-500 text-sm">Please enter a valid email address</p>
+                  <p className="text-red-500 text-sm">
+                    Please enter a valid email address
+                  </p>
                 )}
                 <Button
                   type="submit"
@@ -210,9 +246,25 @@ export default function Footer() {
                 >
                   {isSubmitting ? (
                     <div className="flex items-center">
-                      <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      <svg
+                        className="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle
+                          className="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                        ></circle>
+                        <path
+                          className="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                        ></path>
                       </svg>
                       Subscribing...
                     </div>
@@ -222,14 +274,14 @@ export default function Footer() {
                       Subscribed!
                     </div>
                   ) : (
-                    'Subscribe'
+                    "Subscribe"
                   )}
                 </Button>
               </div>
             </form>
           </div>
         </div>
-        
+
         {/* Copyright */}
         <div className="border-t border-gray-800 pt-8 text-center">
           <p className="text-gray-500 text-sm">
