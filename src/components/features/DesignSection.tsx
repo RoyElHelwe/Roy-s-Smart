@@ -135,26 +135,26 @@ export default function DesignSection() {
                 {/* Base/Bottom */}
                 <motion.div
                   className="absolute bottom-0 left-0 w-full h-[10%] bg-gradient-to-r from-purple-900/50 to-indigo-900/50 rounded-md border border-purple-500/30"
-                  // initial={{ opacity: 0 }}
-                  // animate={{ opacity: isVisible ? 1 : 0 }}
-                  // transition={{ duration: 0.5, delay: 0.2 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: isVisible ? 1 : 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
                 />
                 
                 {/* Table Surface */}
                 <motion.div
                   className="absolute bottom-[10%] left-0 w-full h-[5%] bg-gradient-to-r from-purple-800/70 to-indigo-800/70 rounded-sm border border-purple-400/40 origin-bottom"
-                  // initial={{ rotateX: 0, opacity: 0 }}
-                  // animate={{ 
-                  //   rotateX: isFolded ? -90 : 0,
-                  //   opacity: isVisible ? 1 : 0
-                  // }}
-                  // transition={{ 
-                  //   rotateX: { 
-                  //     duration: 1.5,
-                  //     ease: "easeInOut"
-                  //   },
-                  //   opacity: { duration: 0.5, delay: 0.3 }
-                  // }}
+                  initial={{ rotateX: 0, opacity: 0 }}
+                  animate={{ 
+                    rotateX: isFolded ? -90 : 0,
+                    opacity: isVisible ? 1 : 0
+                  }}
+                  transition={{ 
+                    rotateX: { 
+                      duration: 1.5,
+                      ease: "easeInOut"
+                    },
+                    opacity: { duration: 0.5, delay: 0.3 }
+                  }}
                 >
                   {/* Device Display */}
                   <motion.div
@@ -163,12 +163,12 @@ export default function DesignSection() {
                     //   rotateX: isFolded ? 90 : 0, 
                     //   opacity: isVisible ? 1 : 0
                     // }}
-                    // transition={{ 
-                    //   rotateX: { 
-                    //     duration: 1.5,
-                    //     ease: "easeInOut"
-                    //   }
-                    // }}
+                    transition={{ 
+                      rotateX: { 
+                        duration: 1.5,
+                        ease: "easeInOut"
+                      }
+                    }}
                   >
                     {/* Screen */}
                     <div className="absolute inset-[10%] bg-blue-500/20 rounded-sm border border-blue-500/30" />
@@ -181,12 +181,12 @@ export default function DesignSection() {
                     //   rotateX: isFolded ? 180 : 0,
                     //   opacity: isVisible ? 1 : 0 
                     // }}
-                    // transition={{ 
-                    //   rotateX: { 
-                    //     duration: 1.5,
-                    //     ease: "easeInOut"
-                    //   }
-                    // }}
+                    transition={{ 
+                      rotateX: { 
+                        duration: 1.5,
+                        ease: "easeInOut"
+                      }
+                    }}
                   />
                 </motion.div>
                 
@@ -204,17 +204,17 @@ export default function DesignSection() {
                   <>
                     <motion.div
                       className="absolute bottom-[15%] left-0 w-full border-b border-dashed border-white/30 flex justify-center"
-                      // initial={{ opacity: 0 }}
-                      // animate={{ opacity: isVisible ? 1 : 0 }}
-                      // transition={{ duration: 0.5, delay: 1 }}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: isVisible ? 1 : 0 }}
+                      transition={{ duration: 0.5, delay: 1 }}
                     >
                       <span className="bg-black/50 text-white/70 px-1 text-xs -mb-1.5">100 cm</span>
                     </motion.div>
                     <motion.div
                       className="absolute bottom-[15%] left-0 h-[85%] border-l border-dashed border-white/30 flex items-center"
-                      // initial={{ opacity: 0 }}
-                      // animate={{ opacity: isVisible ? 1 : 0 }}
-                      // transition={{ duration: 0.5, delay: 1.2 }}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: isVisible ? 1 : 0 }}
+                      transition={{ duration: 0.5, delay: 1.2 }}
                     >
                       <span className="bg-black/50 text-white/70 px-1 text-xs -ml-1.5 rotate-90">75 cm</span>
                     </motion.div>
@@ -225,17 +225,17 @@ export default function DesignSection() {
                   <>
                     <motion.div
                       className="absolute bottom-[15%] left-0 w-full border-b border-dashed border-white/30 flex justify-center"
-                      // initial={{ opacity: 0 }}
-                      // animate={{ opacity: isVisible ? 1 : 0 }}
-                      // transition={{ duration: 0.5, delay: 1 }}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: isVisible ? 1 : 0 }}
+                      transition={{ duration: 0.5, delay: 1 }}
                     >
                       <span className="bg-black/50 text-white/70 px-1 text-xs -mb-1.5">50 cm</span>
                     </motion.div>
                     <motion.div
                       className="absolute bottom-[15%] left-0 h-[20%] border-l border-dashed border-white/30 flex items-center"
-                      // initial={{ opacity: 0 }}
-                      // animate={{ opacity: isVisible ? 1 : 0 }}
-                      // transition={{ duration: 0.5, delay: 1.2 }}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: isVisible ? 1 : 0 }}
+                      transition={{ duration: 0.5, delay: 1.2 }}
                     >
                       <span className="bg-black/50 text-white/70 px-1 text-xs -ml-1.5 rotate-90">15 cm</span>
                     </motion.div>
@@ -269,10 +269,10 @@ export default function DesignSection() {
                     }`}
                     onMouseEnter={() => setHoveredFeature(feature.title)}
                     onMouseLeave={() => setHoveredFeature(null)}
-                    // whileHover={{ scale: 1.02 }}
-                    // initial={{ opacity: 0, y: 20 }}
-                    // animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
-                    // transition={{ delay: 0.1 + index * 0.1 }}
+                    whileHover={{ scale: 1.02 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+                    transition={{ delay: 0.1 + index * 0.1 }}
                   >
                     {/* Gradient background that follows mouse */}
                     <div
@@ -308,9 +308,9 @@ export default function DesignSection() {
               {/* Specifications */}
               <motion.div
                 className="mt-8"
-                // initial={{ opacity: 0, y: 20 }}
-                // animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
-                // transition={{ delay: 0.7 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+                transition={{ delay: 0.7 }}
               >
                 <h3 className="text-xl font-bold text-white mb-4">Technical Specifications</h3>
                 
@@ -332,9 +332,9 @@ export default function DesignSection() {
         {/* Materials Showcase */}
         <motion.div
           className="mt-16 max-w-4xl mx-auto"
-          // initial={{ opacity: 0, y: 30 }}
-          // animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
-          // transition={{ delay: 0.8 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
+          transition={{ delay: 0.8 }}
         >
           <h3 className="text-xl font-bold text-white mb-6 text-center">Premium Materials</h3>
           
@@ -370,9 +370,9 @@ export default function DesignSection() {
         {/* Bottom CTA */}
         <motion.div
           className="mt-16 text-center"
-          // initial={{ opacity: 0, y: 30 }}
-          // animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
-          // transition={{ delay: 1 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
+          transition={{ delay: 1 }}
         >
           <p className="text-gray-300 mb-4 max-w-2xl mx-auto">
             Experience the perfect blend of form and function with Roy&apos;s Smart workstation. Designed to go anywhere, built to last.

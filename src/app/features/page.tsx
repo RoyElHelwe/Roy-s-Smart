@@ -2,8 +2,8 @@
 import FeatureShowcase from "@/components/features/FeatureShowcase";
 import PowerSpecsSection from "@/components/features/PowerSpecsSection";
 import ConnectivitySection from "@/components/features/ConnectivitySection";
-// import DesignSection from "@/components/features/DesignSection";
-// import ComparisonTable from "@/components/features/ComparisonTable";
+import DesignSection from "@/components/features/DesignSection";
+import ComparisonTable from "@/components/features/ComparisonTable";
 
 export default function FeaturesPage() {
   return (
@@ -35,12 +35,12 @@ export default function FeaturesPage() {
         
         {/* Design Section */}
         <div id="design">
-          {/* <DesignSection /> */}
+          <DesignSection />
         </div>
         
         {/* Comparison Table */}
         <div id="comparison">
-          {/* <ComparisonTable /> */}
+          <ComparisonTable />
         </div>
       </div>
     </main>
