@@ -1,16 +1,48 @@
 // app/components/HeroSection.tsx
 "use client";
 
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Battery, Wifi, Monitor } from "lucide-react";
 import { motion } from "framer-motion";
+import { Canvas } from "@react-three/fiber";
+import {
+  Environment,
+  OrbitControls,
+  PresentationControls,
+  ContactShadows,
+  Html,
+  useProgress,
+  Stage,
+} from "@react-three/drei";
 import { SparklesCore } from "@/components/ui/aceternity/sparkles";
 import { BackgroundBeams } from "@/components/ui/aceternity/background-beams";
 import Link from "next/link";
+import { Workstation } from "./models";
+
+// Loading component for the 3D model
+function ModelLoader() {
+  const { progress } = useProgress();
+  return (
+    <Html center>
+      <div className="text-center">
+        <div className="text-sm font-medium text-indigo-300">
+          {progress.toFixed(0)}%
+        </div>
+        <div className="w-32 h-1 bg-indigo-900/30 rounded-full overflow-hidden mt-1">
+          <div
+            className="h-full bg-indigo-500"
+            style={{ width: `${progress}%`, transition: "width 0.2s" }}
+          />
+        </div>
+      </div>
+    </Html>
+  );
+}
 
 export default function HeroSection() {
   const [isHovered, setIsHovered] = useState(false);
+  const [isModelSpinning, setIsModelSpinning] = useState(true);
 
   return (
     <div className="relative w-full min-h-screen bg-black/90 overflow-hidden">
@@ -122,23 +154,74 @@ export default function HeroSection() {
             </Link>
           </motion.div>
 
-          {/* Virtual Model Placeholder */}
+          {/* 3D Model Display */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 1, type: "spring" }}
             className="mt-16 relative"
           >
-            <div className="w-full h-[300px] md:h-[400px] bg-gradient-to-b from-indigo-900/20 to-purple-900/20 rounded-xl backdrop-blur-sm border border-indigo-500/20 flex items-center justify-center overflow-hidden">
+            <div
+              className="w-full h-[300px] md:h-[400px] bg-gradient-to-b from-indigo-900/20 to-purple-900/20 rounded-xl backdrop-blur-sm border border-indigo-500/20 overflow-hidden relative"
+              onClick={() => setIsModelSpinning(!isModelSpinning)}
+            >
               <div className="absolute inset-0 bg-grid-white/[0.02] bg-grid-white/5" />
-              <p className="text-white/80 font-medium">
-                Interactive 3D Model Coming Soon
-              </p>
 
-              {/* Position for the 3D model of Roy's Smart */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                {/* We'll implement the 3D model in the next iteration */}
-              </div>
+              {/* 3D Canvas */}
+              <Canvas
+                shadows
+                dpr={[1, 2]} // Responsive pixel ratio
+                camera={{
+                  position: [0, 0, 4],
+                  fov: 50,
+                }}
+                gl={{
+                  antialias: true,
+                  alpha: true,
+                  powerPreference: "high-performance",
+                  preserveDrawingBuffer: true, // Important for screenshots and stability
+                }}
+              >
+
+                {/* Lighting */}
+                <ambientLight intensity={0.5} />
+                <spotLight
+                  position={[10, 10, 10]}
+                  angle={0.15}
+                  penumbra={1}
+                  intensity={1}
+                  castShadow
+                />
+                <pointLight position={[-10, -10, -10]} intensity={0.5} />
+
+                {/* Suspense for loading state */}
+                <Suspense fallback={<ModelLoader />}>
+                  {/* Use Stage to simplify lighting setup for models */}
+                  <Stage
+                    environment="city"
+                    intensity={0.5}
+                    shadows={true}
+                    adjustCamera={false} // Don't adjust the camera automatically
+                  >
+                    {/* Simple OrbitControls instead of PresentationControls */}
+                    <Workstation
+                      position={[0, -0.5, 0]}
+                      scale={1.5}
+                      autoRotate={isModelSpinning}
+                      rotationSpeed={0.005}
+                    />
+                  </Stage>
+
+                  {/* Orbit controls with constraints to prevent issues */}
+                  <OrbitControls
+                    enablePan={false}
+                    enableZoom={true}
+                    maxPolarAngle={Math.PI / 1.75}
+                    minPolarAngle={Math.PI / 3}
+                    makeDefault
+                  />
+                </Suspense>
+              </Canvas>
 
               {/* Feature Callouts */}
               <div className="hidden md:block">
@@ -153,6 +236,11 @@ export default function HeroSection() {
                     Compact & portable
                   </div>
                 </div>
+              </div>
+
+              {/* Model interaction hint */}
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/60 backdrop-blur-md rounded-full px-3 py-1 border border-white/10 text-xs text-white/60">
+                Drag to rotate • Click to {isModelSpinning ? "stop" : "spin"}
               </div>
             </div>
           </motion.div>
