@@ -6,12 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Battery, Wifi, Monitor } from "lucide-react";
 import { motion } from "framer-motion";
 import { Canvas } from "@react-three/fiber";
-import {
-  OrbitControls,
-  Html,
-  useProgress,
-  Stage,
-} from "@react-three/drei";
+import { OrbitControls, Html, useProgress, Stage } from "@react-three/drei";
 import { SparklesCore } from "@/components/ui/aceternity/sparkles";
 import { BackgroundBeams } from "@/components/ui/aceternity/background-beams";
 import Link from "next/link";
@@ -179,7 +174,6 @@ export default function HeroSection() {
                   preserveDrawingBuffer: true, // Important for screenshots and stability
                 }}
               >
-
                 {/* Lighting */}
                 <ambientLight intensity={0.5} />
                 <spotLight

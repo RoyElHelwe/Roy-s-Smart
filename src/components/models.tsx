@@ -8,6 +8,7 @@ import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { GLTF } from "three-stdlib";
+import { ThreeEvent } from "@react-three/fiber";
 
 // Define the type for our GLB model
 type GLTFResult = GLTF & {
@@ -15,13 +16,17 @@ type GLTFResult = GLTF & {
   materials: Record<string, THREE.Material>;
 };
 
-// Define props interface
+// Define props interface with proper typing
 interface WorkstationProps {
   autoRotate?: boolean;
   rotationSpeed?: number;
   scale?: number | [number, number, number];
   position?: [number, number, number];
-  [key: string]: any; // Allow other props to pass through
+  // Use React Three Fiber's JSX native types
+  onClick?: (event: ThreeEvent<MouseEvent>) => void;
+  onPointerOver?: (event: ThreeEvent<PointerEvent>) => void;
+  onPointerOut?: (event: ThreeEvent<PointerEvent>) => void;
+  [key: string]: unknown; // Allow other props to pass through with unknown type
 }
 
 export function Workstation({
@@ -34,11 +39,32 @@ export function Workstation({
   const groupRef = useRef<THREE.Group>(null);
   const [hovered, setHovered] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
+  const [boundingBox, setBoundingBox] = useState<THREE.Box3 | null>(null);
 
   // Cast to unknown first, then to our expected type
   const { nodes, materials } = useGLTF(
     "/models/workstation.glb"
   ) as unknown as GLTFResult;
+
+  // Calculate bounding box and center the model
+  useEffect(() => {
+    if (groupRef.current) {
+      // Create a bounding box for the model
+      const box = new THREE.Box3().setFromObject(groupRef.current);
+      setBoundingBox(box);
+
+      // Calculate the center offset
+      const center = new THREE.Vector3();
+      box.getCenter(center);
+
+      // Center the model by setting its position offset from its own center
+      if (groupRef.current) {
+        groupRef.current.position.x = position[0] - center.x;
+        groupRef.current.position.y = position[1] - center.y;
+        groupRef.current.position.z = position[2] - center.z;
+      }
+    }
+  }, [position]);
 
   // Handle the hover state
   useEffect(() => {
@@ -62,9 +88,16 @@ export function Workstation({
       groupRef.current.rotation.y += rotationSpeed;
     }
 
-    // Subtle floating effect
+    // Subtle floating effect while maintaining centered position
     const t = state.clock.getElapsedTime();
-    groupRef.current.position.y = Math.sin(t * 0.5) * 0.05 + (position[1] || 0);
+    const floatOffset = Math.sin(t * 0.5) * 0.05;
+
+    // Only apply floating to Y axis, preserve the centering on X and Z
+    if (boundingBox) {
+      const center = new THREE.Vector3();
+      boundingBox.getCenter(center);
+      groupRef.current.position.y = position[1] - center.y + floatOffset;
+    }
   });
 
   // Apply the proper scale type
@@ -72,37 +105,64 @@ export function Workstation({
     ? scale
     : ([scale, scale, scale] as [number, number, number]);
 
-  // Keep track of original material to reuse
+  // Keep track of original material
   const originalMaterial = materials.material_0 || nodes.mesh_0.material;
+
+  // Extract material properties for type safety
+  const materialProps = {
+    metalness: 0.8,
+    roughness: 0.2,
+    envMapIntensity: 1,
+    color:
+      hovered || isDragging
+        ? new THREE.Color("#6366f1")
+        : new THREE.Color("#a5b4fc"),
+  };
+
+  // Event handlers with proper types
+  const handlePointerOver = (e: ThreeEvent<PointerEvent>) => {
+    e.stopPropagation();
+    setHovered(true);
+  };
+
+  const handlePointerOut = (e: ThreeEvent<PointerEvent>) => {
+    e.stopPropagation();
+    setHovered(false);
+  };
+
+  const handlePointerDown = (e: ThreeEvent<PointerEvent>) => {
+    e.stopPropagation();
+    setIsDragging(true);
+  };
+
+  const handlePointerUp = (e: ThreeEvent<PointerEvent>) => {
+    e.stopPropagation();
+    setIsDragging(false);
+  };
+
+  const handlePointerLeave = (e: ThreeEvent<PointerEvent>) => {
+    e.stopPropagation();
+    setIsDragging(false);
+  };
 
   return (
     <group
       ref={groupRef}
       {...props}
       dispose={null}
-      position={position}
+      // Initial position before centering calculation
+      position={[0, 0, 0]}
       scale={modelScale}
-      onPointerOver={() => setHovered(true)}
-      onPointerOut={() => setHovered(false)}
-      onPointerDown={() => setIsDragging(true)}
-      onPointerUp={() => setIsDragging(false)}
-      onPointerLeave={() => setIsDragging(false)}
+      onPointerOver={handlePointerOver}
+      onPointerOut={handlePointerOut}
+      onPointerDown={handlePointerDown}
+      onPointerUp={handlePointerUp}
+      onPointerLeave={handlePointerLeave}
     >
       {/* The model mesh */}
       <mesh castShadow receiveShadow geometry={nodes.mesh_0.geometry}>
-        {/* Use cloned material to prevent original modification */}
-        <meshStandardMaterial
-          attach="material"
-          {...originalMaterial}
-          metalness={0.8}
-          roughness={0.2}
-          envMapIntensity={1}
-          color={
-            hovered || isDragging
-              ? new THREE.Color("#6366f1")
-              : new THREE.Color("#a5b4fc")
-          }
-        />
+        {/* Use material properties in a type-safe way */}
+        <meshStandardMaterial attach="material" {...materialProps} />
       </mesh>
     </group>
   );
