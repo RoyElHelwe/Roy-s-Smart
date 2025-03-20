@@ -6,6 +6,35 @@ import { motion } from "framer-motion";
 import { MapPin, MapIcon, Mail, Phone } from "lucide-react";
 import Script from "next/script";
 
+// Define types for Leaflet
+interface LeafletMap {
+  setView: (coordinates: [number, number], zoom: number) => LeafletMap;
+  scrollWheelZoom: { disable: () => void };
+}
+
+interface LeafletMarker {
+  addTo: (map: LeafletMap) => LeafletMarker;
+  bindPopup: (content: string) => LeafletMarker;
+  openPopup: () => void;
+}
+
+interface LeafletTileLayer {
+  addTo: (map: LeafletMap) => LeafletTileLayer;
+}
+
+interface LeafletStatic {
+  map: (element: HTMLDivElement) => LeafletMap;
+  tileLayer: (
+    url: string,
+    options: Record<string, unknown>
+  ) => LeafletTileLayer;
+  marker: (
+    coordinates: [number, number],
+    options: Record<string, unknown>
+  ) => LeafletMarker;
+  divIcon: (options: Record<string, unknown>) => Record<string, unknown>;
+}
+
 // We'll use the direct DOM approach with a script tag instead of react-leaflet
 // to avoid TypeScript issues
 export default function MapLocation() {
@@ -15,7 +44,7 @@ export default function MapLocation() {
   const [mapLoaded, setMapLoaded] = useState(false);
 
   // Coordinates for Qalamoun, Lebanon (approximate for 9QJG+63F)
-  const qalamounCoordinates = [34.3786, 35.7786]; // [latitude, longitude]
+  const qalamounCoordinates: [number, number] = [34.3786, 35.7786]; // [latitude, longitude]
 
   // Intersection observer to trigger animations
   useEffect(() => {
@@ -46,7 +75,7 @@ export default function MapLocation() {
     // This function runs after Leaflet script is loaded
     const initMap = () => {
       // Check if L (Leaflet) is available globally
-      if (typeof window.L !== "undefined") {
+      if (typeof window.L !== "undefined" && mapRef.current) {
         // Create map
         const map = window.L.map(mapRef.current).setView(
           qalamounCoordinates,
@@ -205,6 +234,6 @@ export default function MapLocation() {
 // Add this declaration to make TypeScript happy with the global L object
 declare global {
   interface Window {
-    L: any;
+    L: LeafletStatic;
   }
 }

@@ -4,15 +4,8 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { TextGenerateEffect } from "@/components/ui/aceternity/text-generate-effect";
-import { Lightbulb, Globe, Zap, Shield, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
-interface FutureProduct {
-  id: string;
-  name: string;
-  description: string;
-  icon: React.ReactNode;
-  color: string;
-}
 
 export default function VisionSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -49,7 +42,6 @@ export default function VisionSection() {
       }
     };
   }, []);
-
 
   return (
     <section
