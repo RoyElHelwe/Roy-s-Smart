@@ -29,7 +29,7 @@ interface CompetitorData {
 
 export default function ComparisonTable() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  // const [isVisible, setIsVisible] = useState(false);
   const [hoveredColumn, setHoveredColumn] = useState<string | null>(null);
   const [hoveredRow, setHoveredRow] = useState<string | null>(null);
   const [activeCriteria, setActiveCriteria] = useState<string>("all");
@@ -39,7 +39,7 @@ export default function ComparisonTable() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          // setIsVisible(true);
         }
       },
       { threshold: 0.1 }
