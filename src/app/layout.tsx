@@ -14,8 +14,23 @@ export const metadata: Metadata = {
   },
   description:
     "Portable & Foldable Workstation with power and connectivity for professionals on the move.",
+  manifest: "/manifest.json",
+  icons: {
+    icon: [
+      { url: "/favicon/favicon.ico" },
+      { url: "/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: [
+      {
+        url: "/favicon/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
+  },
 };
-
 export default function RootLayout({
   children,
 }: {
@@ -30,7 +45,6 @@ export default function RootLayout({
 
         {/* Footer */}
         <Footer />
-
       </body>
     </html>
   );
