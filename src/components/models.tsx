@@ -42,7 +42,7 @@ export function Workstation({
   const [boundingBox, setBoundingBox] = useState<THREE.Box3 | null>(null);
 
   // Cast to unknown first, then to our expected type
-  const { nodes, materials } = useGLTF(
+  const { nodes } = useGLTF(
     "/models/workstation.glb"
   ) as unknown as GLTFResult;
 
